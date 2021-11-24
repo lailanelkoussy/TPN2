@@ -11,7 +11,7 @@ void ObjetCompose::operator[](ObjetAtomique*& objetAtomique) {
 }
 
 ObjetCompose::~ObjetCompose() {
-    for(int i = 0; i<composants.size(); i++){
+    for(long unsigned int i = 0; i<composants.size(); i++){
         delete composants[i];
     }
 }

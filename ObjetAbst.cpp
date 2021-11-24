@@ -65,7 +65,7 @@ void ObjetAbst::testObjetAbst() {
     else cout << "PB DECROISSANCE FREQUENCE" << endl;
     // puis remettez ici les fréquences en l'état
     //Pour remettre les fréquences en l'état, nous nous contentons de supprimer les elements de notre vecteur
-    for (int i = 0; i < objetsAtom.size(); i++) {
+    for (long unsigned int i = 0; i < objetsAtom.size(); i++) {
         delete objetsAtom[i];
     }
 
@@ -81,7 +81,7 @@ void ObjetAbst::testObjetAbst() {
     // nous la testerons en la décommantant
     // code :
     //
-    for (int i = 0; i < objetsDisponible.size(); i++) {
+    for (long unsigned int i = 0; i < objetsDisponible.size(); i++) {
 //        objetsDisponible[i].first->name = objetsDisponible[i].first->name + "_mod";
         objetsDisponible[i].first->comment =  objetsDisponible[i].first->comment + "_mod";
     }
@@ -106,7 +106,7 @@ vector<string> ObjetAbst::getAllNames() {
 }
 
 ObjetAtomique *ObjetAbst::forge(const string &name) {
-    for (int i = 0; i < objetsDisponible.size(); i++) {
+    for (long unsigned int i = 0; i < objetsDisponible.size(); i++) {
         string currentName = objetsDisponible[i].first->getName();
         if (currentName == name) {
             if (objetsDisponible[i].second > 0) {
@@ -135,7 +135,7 @@ ObjetAtomique *ObjetAbst::forge(const ObjetAtomique *objetAtomPoint) {
 
 void ObjetAbst::reestablishRessource(string nom) {
 
-    for (int i = 0; i < objetsDisponible.size(); i++) {
+    for (long unsigned int i = 0; i < objetsDisponible.size(); i++) {
         string elementName = objetsDisponible[i].first->getName();
         if (elementName == nom) {
             int *elementCount = &objetsDisponible[i].second;

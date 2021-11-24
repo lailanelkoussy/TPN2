@@ -15,7 +15,7 @@ private:
 protected:
     const string name;
     string comment ="";
-    explicit ObjetAbst(const string&);
+    explicit ObjetAbst( const string&);
     static void reestablishRessource(string);
 
 public:
