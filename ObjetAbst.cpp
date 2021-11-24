@@ -28,10 +28,9 @@ void ObjetAbst::testObjetAbst() {
     // montrez ici qu'on ne peut plus ajouter d'objetAtomique à l'inventaire initial 
     // c.a d. essayez d'en ajoutez dans une ligne que vous laisserez en commentaire
     //
-    //
 
-//    ObjetAtomique* nouvelObjet = new ObjetAtomique("E");
-//    objetsDisponible.push_back(pair<nouvelObjet, 200>);
+//    pair<ObjetAtomique*, int> p(new ObjetAtomique("E"), 200);
+//    objetsDisponible.push_back(p);
 
     // Expliquez en qqs phrases, et mettez en évidence en MAJUSCULE ce qui dans le type a empéché l'action de se faire
     //
@@ -83,13 +82,17 @@ void ObjetAbst::testObjetAbst() {
     // code :
     //
     for (int i = 0; i < objetsDisponible.size(); i++) {
-
+//        objetsDisponible[i].first->name = objetsDisponible[i].first->name + "_mod";
+        objetsDisponible[i].first->comment =  objetsDisponible[i].first->comment + "_mod";
     }
 
     // Expliquez ici en formant une phrase compréhensible, ce qui dans les types 
     // permet de répondre précisément à la spécification précédente
-    // (utilisez des majuscules pour faire ressortir les mots clés significatifs) 
-
+    // (utilisez des majuscules pour faire ressortir les mots clés significatifs)
+    //REPONSE: les noms sont inchangeable à cause du mot clé CONST ajouté à la définition de leur variable NAME,
+    // alors que la variable comment n'est pas marquée comme étant constante.
+    //De plus, ces variables sont accessibles par notre fonction qui est définie dans ObjetAbst, car les variables sont
+    // déclarés dans ObjetAbst, et que ObjetAtomique hérite de ObjetAbst
 }
 
 ObjetAbst::ObjetAbst(const string &nom) : name(nom) {}
@@ -118,11 +121,15 @@ ObjetAtomique *ObjetAbst::forge(const string &name) {
     return nullptr;
 }
 
-ObjetAtomique *ObjetAbst::forge(ObjetAtomique &objetAtom) {
+ObjetAtomique *ObjetAbst::forge(const ObjetAtomique &objetAtom) {
+    //Test 6
+    //objetAtom.setComment("bonjour");
     return forge(objetAtom.getName());
 }
 
-ObjetAtomique *ObjetAbst::forge(ObjetAtomique *objetAtomPoint) {
+ObjetAtomique *ObjetAbst::forge(const ObjetAtomique *objetAtomPoint) {
+    //Test 6
+    //objetAtomPoint->setComment("bonjour");
     return forge(objetAtomPoint->getName());
 }
 
@@ -137,3 +144,4 @@ void ObjetAbst::reestablishRessource(string nom) {
         }
     }
 }
+

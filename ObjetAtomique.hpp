@@ -16,8 +16,7 @@ private:
 
 public:
     void setComment(const string&);
-    string getName();
-    //TODO: need to make this go back to ObjAbs class and increase availability by 1
+    string getName() const;
     ~ObjetAtomique();
 };
 
