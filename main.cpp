@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
     // dans le code de ces deux dernières forges, vérifiez que l'argument que vous avez passé est typé afin de n'etre pas modifiable
     // pour cela écrivez y une ligne qui effectue un appel à setComment("testConstant") sur l'argument
     // laissez le en commentaire, puisqu'il devrait échouer.
-    //REPONSE DANS LE CODE DES DEUX DERNIERES FORGE
+    ////REPONSE DANS LE CODE DES DEUX DERNIERES FORGE
 
     // Test 7
     // Vérifiez à présent les interdictions de copie et d'affectation en exhibant 2 lignes qui doivent echouer
@@ -42,10 +42,10 @@ int main(int argc, char **argv) {
 
     // Expliquez aussi, clairement, comment vous avez restreint la construction.
     // En une phrase minimum, et en faisant ressortir en majuscule les choses importantes de votre code
-    //REPONSE: La contruction d'ObjetAtomique est restreinte par le fait que le constructeur est mis en PRIVÉ
-    //Uniquement quelques fonctions (la fonction initializeVector, et une des fonctions forge) sont marquées comme
-    //FRIEND fonctions de la classe ObjetAtomique, pour 1. permettre l'initialization du vecteur de ressources,
-    // 2. forge les ressources, mais en checkant avant si les ressources ne sont pas épuisées
+    ////REPONSE: La contruction d'ObjetAtomique est restreinte par le fait que le constructeur est mis en PRIVÉ
+    ////Uniquement quelques fonctions (la fonction initializeVector, et une des fonctions forge) sont marquées comme
+    ////FRIEND fonctions de la classe ObjetAtomique, pour 1. permettre l'initialization du vecteur de ressources,
+    //// 2. forge les ressources, mais en checkant avant si les ressources ne sont pas épuisées
 
 
 
@@ -64,10 +64,10 @@ int main(int argc, char **argv) {
     else cout << "PB avec le recyclage 2" << endl;
 
     // Expliquez ici en francais les une ou deux choses qu'il vous a fallu faire
-// Dans le destructeur de la classe ObjetAtomique, j'appelle une fonction statique nommée reestablishRessource(string)
-// définie dans ObjetAbst qui prend comme paramètre le nom de la ressource. Cette fonction, qui est une fonction statique
-// de ObjetAbst, a accès au vecteur objetsDisponible, et donc est capable de réincrémenter la ressource correspondante
-// au nom de la ressource détruite
+////REPONSE: Dans le destructeur de la classe ObjetAtomique, j'appelle une fonction statique nommée reestablishRessource(string)
+//// définie dans ObjetAbst qui prend comme paramètre le nom de la ressource. Cette fonction, qui est une fonction statique
+//// de ObjetAbst, a accès au vecteur objetsDisponible, et donc est capable de réincrémenter la ressource correspondante
+//// au nom de la ressource détruite
 
 
     // Test 9
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
         else cout << "PB LES OBJETS ONT MAL ETE INTEGRES DANS AB (1/2)" << endl;
         // montrez nous ici le contenu de ab
         cout << "### affichage des composants contenus dans ab (on attend un A et un B) (2/2)" << endl;
-        // à faire
+        cout<<ab;
     } // remarquez qu'à la sortie de ce bloc ab est detruit
     // sa destruction doit restituer les ancien a1 et b
     // en particulier, arrivé ici on doit pouvoir forger un nouvel A

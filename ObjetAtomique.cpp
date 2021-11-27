@@ -14,3 +14,12 @@ string ObjetAtomique::getName()const {
 ObjetAtomique::~ObjetAtomique() {
     reestablishRessource(name);
 }
+
+string ObjetAtomique::getComment() const {
+    return comment;
+}
+
+ostream& operator<<(ostream& out, const ObjetAtomique& objetAtomique){
+    out<<"name: "<<objetAtomique.name <<" comment: "<<objetAtomique.comment<<endl;
+    return out;
+}

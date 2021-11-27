@@ -13,8 +13,10 @@ private:
     ObjetAtomique(const string &name);
     friend ObjetAtomique* ObjetAbst::forge(const string& name);
     friend vector<pair<ObjetAtomique*,int>> initializeVector();
+    friend ostream& operator<<(ostream&, const ObjetAtomique&);
 
 public:
+    string getComment() const;
     void setComment(const string&);
     string getName() const;
     ~ObjetAtomique();
